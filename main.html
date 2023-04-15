@@ -1,16 +1,35 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+	<title>Get Window Size</title>
+	<style>
+		#sizeInfo {
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			z-index: 9999;
+		}
+	</style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+	<div id="sizeInfo">
+		<h1>Width: <span id="width"></span> Height: <span id="height"></span></h1>
+	</div>
+
+	<script>
+		window.addEventListener('resize', function(event) {
+			var width = window.innerWidth;
+			var height = window.innerHeight;
+			document.getElementById('width').innerHTML = width;
+			document.getElementById('height').innerHTML = height;
+		});
+	</script>
 
 </body>
-
 </html>
